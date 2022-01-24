@@ -16,6 +16,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+
 const database= require('./config/mongoose')
 const Movie= require('./models/movie')
 
