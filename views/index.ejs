@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+    <style>
+      h1{
+            text-align: center;
+            color: rgb(124, 44, 100);
+        }
+        h2{
+        text-align: center; 
+        font-size: 40px;
+        color: rgb(4, 154, 255); 
+     }
+     h3{
+        text-align: center; 
+        font-size: 30px;
+        color: rgb(177, 36, 113); 
+     }
+    .styled {
+    border: 1px solid red;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+input{
+  width: 10%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+} 
+div{
+   text-align: center;
+} 
+    </style>
+</head>
+<body>
+    <h1>Movies</h1>
+    <form action="/addMovies" method="POST" style="text-align: center;">
+        <input type="text" name="movieName" placeholder="ENTER NAME OF MOVIE" required>
+        <input type="number" name="movieYear" placeholder="YEAR" min="1000" max="2099" required>
+        <button class="styled">ADD</button>
+    </form>
+    <% if(Movies.length==0){ %>
+        <h2>Add more Movies</h2>
+    <% } %>
+    
+        <% for(i of Movies) { %>
+            <h3 contenteditable > MovieName : <%= i.name %> </h3>
+            <h3 contenteditable > MovieYear : <%= i.year %> </h3>
+            <div><button class="styled"> 
+                <a href="/movieDelete/?id=<%= i._id %>" style="font-size: 20px; text-decoration: none; color: white;">
+                DELETE
+            </a>
+            </button></div><br>
+            <form action="/updateMovie/?id=<%= i._id %>" method="POST" style="text-align: center;">
+                <input type="text" name="name" placeholder="ENTER NAME OF MOVIE" required>
+                <input type="number" name="year" placeholder="YEAR" min="1000" max="2099" required>
+                <button class="styled">UPDATE</button>
+            </form>
+        
+       <% } %>
+      
+    
+</body>
+</html>

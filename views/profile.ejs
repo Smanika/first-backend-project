@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome here <%=name%> :)!</h1>
+    <h2>My email id:- <%=email%></h2>
+    <h2>My Batch. :- <%=batch%></h2>
+    <h2>My college name:- <%=college%></h2>
+    <h2>My roll no. :- <%=roll%></h2>
+
+    <h1>Welcome here <%=name1%> :)!</h1>
+    <h2>My email id:- <%=email1%></h2>
+    <h2>My Batch. :- <%=batch1%></h2>
+
+    <h1>Welcome here <%=name2%> :)!</h1>
+    <h2>My email id:- <%=email2%></h2>
+    <h2>My Batch. :- <%=batch2%></h2>
+   
+    <ul>
+        <% for(let i=1;i<=5;i++){ %>
+            <li>
+                <%= i %>
+            </li>
+        <% } %>
+     </ul>
+    
+</body>
+</html>
